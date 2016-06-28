@@ -2,22 +2,6 @@ using System.IO;
 
 namespace Gpio
 {
-    public class PwmPin : GpioPin
-    {
-        public int Frequency { get; private set; }
-
-        public PwmPin(int frequency) : base(GpioPinNumber.Gpio11, Direction.Out)
-        {
-            Write(frequency);
-        }
-
-        public void Write(int frequency)
-        {
-            Frequency = frequency;
-            File.WriteAllText(GpioPath + GpioPinNumber.ToString().ToLower() + "/value", frequency.ToString());
-        }
-    }
-
     public class OutputPin : GpioPin
     {
         public OutputPin(GpioPinNumber pin) : base(pin, Direction.Out)
