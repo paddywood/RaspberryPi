@@ -8,20 +8,23 @@ namespace LedTest
     {
         private static void Main(string[] args)
         {
-            var pin = new OutputPin(GpioPinNumber.Gpio11, State.High);
+            var pin11 = new OutputPin(GpioPinNumber.Gpio11);
+            var pin2 = new OutputPin(GpioPinNumber.Gpio17);
 
             Console.WriteLine("Press ESC to stop");
 
             while (!(Console.KeyAvailable && Console.ReadKey(true).Key == ConsoleKey.Escape))
             {
-                Thread.Sleep(1000);
-                pin.Write(State.Low);
-                Thread.Sleep(1000);
-                pin.Write(State.High);
+                pin11.Write(State.Low);
+                pin2.Write(State.High);
+                Thread.Sleep(750);
+                pin11.Write(State.High);
+                pin2.Write(State.Low);
+                Thread.Sleep(750);
             }
 
-            pin.Cleanup();
-                        
+            pin11.Cleanup();
+            pin2.Cleanup();              
         }
     }
 }

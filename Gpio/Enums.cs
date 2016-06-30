@@ -2,14 +2,14 @@
 {
     public enum GpioPinNumber
     {
-        Gpio02 = 2,
-        Gpio03,
-        Gpio04,
-        Gpio05,
-        Gpio06,
-        Gpio07,
-        Gpio08,
-        Gpio09,
+        Gpio2 = 2,
+        Gpio3,
+        Gpio4,
+        Gpio5,
+        Gpio6,
+        Gpio7,
+        Gpio8,
+        Gpio9,
         Gpio10,
         Gpio11,
         Gpio12,
